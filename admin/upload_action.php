@@ -1,6 +1,11 @@
 <?php 
 	session_start();
-	require_once '../config/database.php';
+    if(empty($_SESSION['userid']) && empty($_SESSION['username']))
+    {
+        header("Location: index.php");
+        exit;   
+    }
+    require_once '../config/database.php';
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		if(!empty($_POST['banner_up_btn'])) {

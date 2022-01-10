@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+    if(empty($_SESSION['userid']) && empty($_SESSION['username']))
+    {
+        header("Location: index.php");
+        exit;   
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -35,9 +42,10 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="dashboard.php">Home</a></li>
                         <li><a href="bannerlist.php">Banner List</a></li>
+                        <li><a href="../site/slideshow.php">View Site</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+                        <li><a href="lg-out.php"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
                     </ul>
                 </div>
             </div>

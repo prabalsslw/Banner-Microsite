@@ -1,5 +1,6 @@
             
         </div>
+        <!-- <p align="center" style="position: fixed;height: 30px;bottom: 0;margin: 0;width: 100%;background: white;"><a href="https://www.bkash.com/" target="_blank">bKash</a> &#169; <?= date("Y") ?></p> -->
     </body>
 
     <?php if(isset($_SESSION['errorMsg'])){ ?>
