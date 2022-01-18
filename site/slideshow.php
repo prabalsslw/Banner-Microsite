@@ -14,21 +14,24 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script type=“text/javascript” src=“https://cdn.capp.bka.sh/scripts/webview_bridge.js”></script>
         <style type="text/css">
-            body { padding: 0; margin: 0; }
-            img { min-width: 100%; min-height: 100%;}
+            html {
+                height: 100%;
+            }
+            body { 
+                height: 100%;
+            }
+            img{
+                display: block;
+            }
         </style>
     </head>
     <body>
-        <div class="container-fluid">
-            <div class="col-md-12">
+        <!--<div class="container-fluid">-->
+        <!--    <div class="col-md-12">-->
                 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
-                   <!--  <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    </ol> -->
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                         <?php 
@@ -40,6 +43,13 @@
                             <a href="<?= $banner_listrow['banner_url'] ?>" target="_blank"><img src="../uploads/<?= $banner_listrow['image'] ?>" alt="<?= $banner_listrow['banner_name'] ?>" class="fill"></a>
                         </div>
                         <?php } ?>
+                        <br><br><br>
+                        <ol class="carousel-indicators">
+                            <?php for($j = 0; $j < $i; $j++) { ?>
+                                <li style="color:lavenderblush;background: #E2136E;" data-target="#carousel-example-generic" data-slide-to="<?= $j ?>" class="<?= ($j== 0) ? 'active' : '' ?>"></li>
+                            <?php } ?>
+                        </ol>
+                        
                     </div>
                     <!-- Controls -->
                   <!--   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
@@ -51,7 +61,13 @@
                     <span class="sr-only">Next</span>
                     </a> -->
                 </div>
-            </div>
-        </div>
+        <!--    </div>-->
+        <!--</div>-->
     </body>
+    <script>
+        $('.carousel').carousel({
+            interval: 6000
+        })
+
+    </script>
 </html>

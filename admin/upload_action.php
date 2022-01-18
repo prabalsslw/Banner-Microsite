@@ -62,7 +62,7 @@
 				$banner_name = (!empty($_POST["banner_name"])) ? $_POST["banner_name"] : '';
 				$banner_url = (!empty($_POST["banner_url"])) ? $_POST["banner_url"] : '';
 				$description = (!empty($_POST["description"])) ? $_POST["description"] : '';
-				$status = (!empty($_POST["status"])) ? $_POST["status"] : '';
+				$status = (!empty($_POST["status"])) ? (int)$_POST["status"] : 0;
 				$oldimage = (!empty($_POST["oldimage"])) ? $_POST["oldimage"] : '';
 				
 				if(!empty($_FILES["banner_image"]["name"])) {
